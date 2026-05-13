@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <meta name="viewport" content="width=device-width">
+  <title>Valgresultat</title>
+  <style>
+    body {
+      font-family: system-ui;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    main {
+      width: 280px;
+      padding: 2rem 2rem 1.5rem;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .title {
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    row {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #eee;
+      
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    row:last-child {
+        border-bottom: none;
+    }
+
+    .container {
+      flex-grow: 1;
+      background: #eee;
+      border-radius: 8px;
+      height: 16px;
+    }
+
+    .bar {
+      height: 100%;
+      background: #0077ff;
+      border-radius: 8px;
+    }
+
+    .votes {
+      width: 1rem;
+      text-align: right;
+    }
+  </style>
+  <body>
+    <main>
+      <h1 class="title"></h1>
+      <ul id="votes"></ul>
+    </main>
+  </body>
+  <script type="module">
+    document.body.style.height = /Mobi/i.test(navigator.userAgent) ? "90vh" : "100vh";
+
+    function resize() {document.documentElement.style.zoom = Math.min(1, window.innerWidth / 420)}
+    resize();
+
+    window.addEventListener("resize", resize);
+
+    try {
+        const response = await fetch("http://192.168.1.50/statistics");
+        const stats = await response.json();
+
+        document.querySelector(".title").textContent = "Valgresultat";
+
+        const list = document.getElementById("votes");
+        list.innerHTML = "";
+
+        for (const [name, votes] of Object.entries(stats)) {
+          const row = document.createElement("row");
+          const span = document.createElement("span");
+          
+          span.textContent = name;
+          span.style.width = "70px";
+
+          const container = document.createElement("div");
+          container.className = "container";
+
+          const bar = document.createElement("div");
+          bar.className = "bar";
+          bar.style.width = `${(votes / Math.max(...Object.values(stats), 1)) * 100}%`;
+
+          container.appendChild(bar);
+
+          const votesSpan = document.createElement("span");
+          votesSpan.className = "votes";
+          votesSpan.textContent = votes;
+
+          row.appendChild(span);
+          row.appendChild(container);
+          row.appendChild(votesSpan);
+
+          list.appendChild(row);
+        }
+      } catch (error) {document.getElementById("votes").innerHTML = "<row>Could not access statistics</li>"; console.log(error)}
+  </script>
+</html>
