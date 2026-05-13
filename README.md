@@ -10,7 +10,7 @@ Når en stemme avgis, sendes den til mikrokontrolleren, som validerer og registr
 
 ## Teknisk oversikt
 - **Frontend:** HTML, CSS og JavaScript
-- **Backend:** Socket basert webserver på Mbits MicroBit
+- **Backend:** Socket-basert webserver som kjører på [Elecrow Mbits](https://www.elecrow.com/mbits.html)
 - **Lagring:** Data lagres i RAM (ingen ekstern database)
 - **Maskinvare:** Mbits brukes som hovedenhet for nettverk og databehandling
 
