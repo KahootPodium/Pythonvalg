@@ -1,7 +1,7 @@
 # Pythonvalg
 Digitalt valgsystem der elever kan stemme på kandidater ved hjelp av engangskoder. Resultatene vises live under avstemningen.
 
-<img src="images/Preview.png" width="350">
+<img src="images/Preview.png">
 
 ## Hvordan det fungerer
 Brukere får tildelt en engangskode som gir tilgang til å stemme en gang. Systemet sørger for at hver stemme er unik og at brukeren kun kan stemme på kandidater fra riktig klasse.
