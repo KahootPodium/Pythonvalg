@@ -6,7 +6,7 @@ Digitalt valgsystem der elever kan stemme på kandidater ved hjelp av engangskod
 ## Hvordan det fungerer
 Brukere får tildelt en engangskode som gir tilgang til å stemme en gang. Systemet sørger for at hver stemme er unik og at brukeren kan kun stemme på kandidater fra riktig klasse.
 
-Når en stemme avgis, sendes den til en mikrokontroller, som validerer og registrerer stemmen. Deretter blir resultatene oppdatert og vist i et grafisk grensesnitt, slik at man kan følge utviklingen underveis i avstemningen.
+Når en stemme avgis, sendes den til en mikrokontroller som validerer og registrerer stemmen. Når stemmen er registrert, oppdateres resultatene og vises i et grafisk grensesnitt.
 
 ## Teknisk oversikt
 - **Frontend:** HTML, CSS og JavaScript
