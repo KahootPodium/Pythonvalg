@@ -1,5 +1,5 @@
 # Pythonvalg
-Et digitalt valgsystem der elever kan stemme på kandidater gjennom en nettside ved hjelp av engangskoder.
+Digitalt valgsystem der elever kan stemme på kandidater ved hjelp av engangskoder. Resultatene vises live under avstemningen.
 
 <img src="images/preview.png" width="400">
 
