@@ -6,12 +6,12 @@ Digitalt valgsystem der elever kan stemme på kandidater ved hjelp av engangskod
 ## Hvordan det fungerer
 Brukere får tildelt en engangskode som gir tilgang til å stemme en gang. Systemet sørger for at hver stemme er unik og at brukeren kan kun stemme på kandidater fra riktig klasse.
 
-Når en stemme avgis, sendes den til en mikrokontroller som validerer og registrerer stemmen. Når stemmen er registrert, oppdateres resultatene og vises i et grafisk grensesnitt.
+Når en stemme avgis, sendes den til mikrokontrolleren som validerer og registrerer stemmen. Deretter blir resultatene oppdatert og vist fram i et grafisk grensesnitt, der man kan følge med på utviklingen underveis i avstemningen.
 
 ## Teknisk oversikt
 - **Frontend:** HTML, CSS og JavaScript
-- **Backend:** Socket-basert webserver som kjører på [Elecrow Mbits](https://www.elecrow.com/mbits.html)
-- **Lagring:** Data lagres i RAM (ingen ekstern database)
+- **Backend:** Socket-basert webserver som kjører på [Mbits](https://www.elecrow.com/mbits.html)
+- **Lagring:** Data lagres i RAM
 - **Maskinvare:** Mbits brukes som hovedenhet for nettverk og databehandling
 
 ## Fokusområder
